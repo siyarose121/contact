@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Contacts</title>
+  </head>
+  <body>
+    {% block content %}
+   <div class="justify-content-center" style="width: 500px;height: 500px;margin-left: 400px;text-align: center;">
+    <h1 style="justify-content: center;color: black;margin-top: 10px;">Add Contacts</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <input type="submit" value="save" class="btn btn-warning">
+    </form>
+    {% endblock %}
+   </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    
+  </body>
+</html>

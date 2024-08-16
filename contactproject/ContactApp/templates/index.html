@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+  
+
+    <title>Home</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light container-fluid" style="color: aquamarine;background-color: aqua">
+      <div class="container-fluid">
+        <a class="navbar-brand" href=""><i class="fa-sharp fa-solid fa-phone-rotary"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home_view' %}" >Home</a>
+            </li>
+         
+            
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="{% url 'add_view' %}">Add Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="{% url 'list_view' %}">View Contacts</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Accounts
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <li><a class="dropdown-item text-dark"  href="{% url 'reg_view' %}" >SignUp</a></li>
+                <li><a class="dropdown-item text-dark"  href="{% url 'login_view' %}" >SignIn </a></li>
+                <li><a class="dropdown-item text-dark"  href="{% url 'logout_view' %}">SignOut</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% if messages %}
+    {% for i in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{i}}</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+    {% block content %}
+    
+    <div id="d1" style="width: 1350px;height:500px;"><br><br><br>
+     <h1 class="text-center text-light"><i>Save Your Contacts</i></h1>
+      {% endblock %}
+    </div>
+  <Footer>
+  <footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2024</p></div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for i in con %}
+<div class="row justify-content-center mt-4">
+    <div class="col-12 col-md-6 col-lg-4">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td>{{i.name}}</td>
+        <td>{{i.phone}}</td>
+        <td>
+          <a class="btn btn-success" href="{% url 'update_view' i.id %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'delete_view' i.id %}">Delete</a></td>
+        </td>
+        </tr>
+    </tbody>
+    
+  </table>
+  </div>
+  </div>
+ 
+  {% endfor %}
+{% endblock %}
